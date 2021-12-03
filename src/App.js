@@ -1,11 +1,15 @@
 import { Provider } from 'react-redux';
 import CourseList from './components/CourseList';
-import store from './store';
+import StoreMarketList from './components/StoreMarket';
+import store from './components/Store/index';
+import StoreCart from './components/StoreCart';
 
 function App (){
   return (
     <Provider store={store}>
       <CourseList/>
+      <StoreMarketList/>
+      <StoreCart/>
     </Provider>
   )
 }

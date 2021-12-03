@@ -1,14 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-
-function addCourseAction(title){
-    return {type : 'ADD_COURSE', title};
-
-}
+import { useDispatch, useSelector } from 'react-redux';
+import { addCourseAction } from '../Store/actions';
 
 export default function CourseList() {
-    const courses = useSelector(state => state.data);
+    const courses = useSelector(state => state.course.data);
     const dispatch = useDispatch();
     
     function addCourse(){
@@ -19,7 +14,7 @@ export default function CourseList() {
         <>
             <ul>
                 {
-                    courses.map(course => <li key={course}>{course}</li>)
+                    courses.map((course, i) => <li key={i}>{course}</li>)
                 }
             </ul>
             <button type="button" onClick={addCourse}>add course</button>

@@ -2,19 +2,15 @@ import { createStore } from 'redux';
 
 const INITIAL_STATE = {
     data : [
-        'a'
+        'Lavadera de loça'
     ]
 }
 
-function courses(state = INITIAL_STATE, action){
+export default function storeMarket(state = INITIAL_STATE, action){
     switch(action.type){
-        case 'ADD_COURSE':
+        case 'ADD_ITEM':
             return {...state, data: [...state.data, action.title] };
         default:
             return state;
     }
 }
-
-const store = createStore(courses);
-
-export default store;
